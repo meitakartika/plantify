@@ -291,7 +291,7 @@
 
     .why-us h2 {
         font-size: 32px;
-        font-weight: 600;
+        font-weight: 700;
         color: #1E1E1E;
         margin-bottom: 16px;
     }
@@ -421,7 +421,7 @@
 
     .categories h2 {
         font-size: 32px;
-        font-weight: 600;
+        font-weight: 700;
         color: #1E1E1E;
         margin-bottom: 24px;
     }
@@ -511,7 +511,7 @@
 
     .promo-text h3 {
         font-size: 28px;
-        font-weight: 600;
+        font-weight: 700;
         color: #1E1E1E;
         margin-top: 12px;
         margin-bottom: 16px;
