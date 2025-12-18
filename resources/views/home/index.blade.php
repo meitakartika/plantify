@@ -81,9 +81,7 @@
         height: 400px;
     }
 
-    /* ========================= */
     /* RESPONSIVE HERO */
-    /* ========================= */
     @media (max-width: 768px) {
         .hero {
             flex-direction: column;
@@ -314,7 +312,8 @@
     .why-card p {
         color: rgba(30, 30, 30, 0.6);
         font-size: 16px;
-        font-weight: 500;
+        margin-left: 16px;
+        margin-right: 16px;
     }
 
     /* TABLET */
@@ -368,7 +367,6 @@
         }
     }
 
-    /* CATEGORY */
     /* CATEGORY */
     .categories {
         max-width: 1200px;
@@ -495,7 +493,6 @@
     .promo {
         background: #EBF5F3;
         color: #000;
-        margin: 80px auto;
         max-width: 1200px;
         margin: 0 auto;
         border-radius: 20px;
@@ -661,10 +658,6 @@
         transition: transform 0.6s
     }
 
-    .testimonial-grid::-webkit-scrollbar {
-        display: none;
-    }
-
     .testimonial-card {
         flex: 0 0 584px;
         background: #D3E7E5;
@@ -673,7 +666,6 @@
         position: relative;
         box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
         max-width: 584px;
-        transition: transform 0.6s;
     }
 
     .testimonial-card .quote {
@@ -797,7 +789,6 @@
 </style>
 
 @section('content')
-
     <!-- HERO -->
     <section class="hero">
         <div class="hero-content">
@@ -863,19 +854,19 @@
             <div class="why-card">
                 <i class="bi bi-flower1"></i>
                 <h4>Large Assortment</h4>
-                <p>Lorem ipsum dolor sit amet</p>
+                <p>From indoor to outdoor, we offer a diverse selection of plants to suit every space and lifestyle</p>
             </div>
 
             <div class="why-card">
                 <i class="bi bi-box"></i>
                 <h4>Fast & Free Shipping</h4>
-                <p>Lorem ipsum dolor sit amet</p>
+                <p>Your plants are carefully packed and delivered fresh to your door with safe and reliable shipping</p>
             </div>
 
             <div class="why-card">
                 <i class="bi bi-telephone-outbound"></i>
                 <h4>24/7 Support</h4>
-                <p>Lorem ipsum dolor sit amet</p>
+                <p>Need help choosing or caring for your plants? Our support team is always ready to assist you anytime</p>
             </div>
         </div>
     </section>
@@ -902,7 +893,7 @@
             <div class="promo-text">
                 <span>WEEKLY OFFER DEALS</span>
                 <h3>Exclusive Discounts<br>on Must-Have Greens!</h3>
-                <p>Seed your perspective and dominate nature.</p>
+                <p>Let nature thrive in your living space!</p>
                 <a href="#" class="btn">Shop Now</a>
             </div>
 
@@ -925,12 +916,7 @@
             <div class="testimonial-grid" id="testimonialSlider">
                 <div class="testimonial-card">
                     <div class="quote">“</div>
-
-                    <p>
-                        Pellentesque etiam blandit in tincidunt at donec.
-                        Eget ipsum dignissim placerat nisi, adipiscing mauris non.
-                    </p>
-
+                    <p>Plants arrived fresh and well packaged. The quality exceeded my expectations.</p>
                     <div class="testimonial-footer">
                         <div class="user">
                             <div class="avatar">
@@ -938,86 +924,66 @@
                             </div>
                             <span>Janne Cooper</span>
                         </div>
-
                         <div class="rating">
                             <i class="bi bi-star-fill"></i>
-                            <span>4.3</span>
+                            <span>4.9</span>
                         </div>
                     </div>
                 </div>
 
                 <div class="testimonial-card">
                     <div class="quote">“</div>
-
-                    <p>
-                        Pellentesque etiam blandit in tincidunt at donec.
-                        Eget ipsum dignissim placerat nisi, adipiscing mauris non.
-                    </p>
-
+                    <p>The plants look exactly like the photos. They really make my home feel more alive.</p>
                     <div class="testimonial-footer">
                         <div class="user">
                             <div class="avatar">
                                 <i class="bi bi-person-fill"></i>
                             </div>
-                            <span>Janne Cooper</span>
+                            <span>Michael Brown</span>
                         </div>
-
                         <div class="rating">
                             <i class="bi bi-star-fill"></i>
-                            <span>4.3</span>
+                            <span>4.8</span>
                         </div>
                     </div>
                 </div>
 
                 <div class="testimonial-card">
                     <div class="quote">“</div>
-
-                    <p>
-                        Pellentesque etiam blandit in tincidunt at donec.
-                        Eget ipsum dignissim placerat nisi, adipiscing mauris non.
-                    </p>
-
+                    <p>Fast delivery and great plant quality. Highly recommended for plant lovers.</p>
                     <div class="testimonial-footer">
                         <div class="user">
                             <div class="avatar">
                                 <i class="bi bi-person-fill"></i>
                             </div>
-                            <span>Janne Cooper</span>
+                            <span>Olivia Carter</span>
                         </div>
-
                         <div class="rating">
                             <i class="bi bi-star-fill"></i>
-                            <span>4.3</span>
+                            <span>5.0</span>
                         </div>
                     </div>
                 </div>
 
                 <div class="testimonial-card">
                     <div class="quote">“</div>
-
-                    <p>
-                        Pellentesque etiam blandit in tincidunt at donec.
-                        Eget ipsum dignissim placerat nisi, adipiscing mauris non.
-                    </p>
-
+                    <p>Plantify made it easy to bring greenery into my space. Everything arrived healthy.</p>
                     <div class="testimonial-footer">
                         <div class="user">
                             <div class="avatar">
                                 <i class="bi bi-person-fill"></i>
                             </div>
-                            <span>Janne Cooper</span>
+                            <span>Daniel Wilson</span>
                         </div>
-
                         <div class="rating">
                             <i class="bi bi-star-fill"></i>
-                            <span>4.3</span>
+                            <span>4.9</span>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-
 @endsection
 
 @push('scripts')
