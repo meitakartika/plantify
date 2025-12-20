@@ -131,7 +131,7 @@
 
             <div class="nav-icons">
                 <a href="/cart"><i class="bi bi-cart3"></i></a>
-                <a href="/profile"><i class="bi bi-person"></i></a>
+                <a href="{{ route('login') }}"><i class="bi bi-person"></i></a>
             </div>
         </div>
     </header>

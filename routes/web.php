@@ -31,3 +31,11 @@ Route::get('/products/{id}', function ($id) {
 
     return view('products.show', compact('product', 'related'));
 });
+
+Route::get('/login', function () {
+    return view('auth.login');
+})->name('login');
+
+Route::get('/register', function () {
+    return view('auth.register');
+})->name('register');
