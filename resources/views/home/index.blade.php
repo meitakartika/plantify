@@ -281,11 +281,22 @@
         margin: 40px auto 0;
     }
 
+    .why-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
     .why-card i {
         font-size: 28px;
         background: #1D2F33;
         color: #7EC676;
-        padding: 16px;
+        width: 62px;
+        height: 62px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         border-radius: 12px;
     }
 
@@ -303,7 +314,7 @@
     }
 
     .why-us h4 {
-        margin-top: 30px;
+        margin-top: 20px;
         margin-bottom: 8px;
         font-size: 20px;
         font-weight: 600;
@@ -821,7 +832,7 @@
         <div class="section-header">
             <h3>Best Selling<br>Plants</h3>
             <p>Easiest way to healthy life by buying your favorite plants</p>
-            <a href="#" class="link-btn">See more</a>
+            <a href="{{ route('products') }}" class="link-btn">See more</a>
         </div>
 
         <div class="product-grid">
@@ -894,7 +905,7 @@
                 <span>WEEKLY OFFER DEALS</span>
                 <h3>Exclusive Discounts<br>on Must-Have Greens!</h3>
                 <p>Let nature thrive in your living space!</p>
-                <a href="#" class="btn">Shop Now</a>
+                <a href="{{ route('products') }}" class="btn">Shop Now</a>
             </div>
 
             <img src="/images/promo-plant.png">

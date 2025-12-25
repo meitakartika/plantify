@@ -73,7 +73,7 @@
     .read-more-btn {
         background: none;
         border: none;
-        color: #4CBA9B;
+        color: #236A55;
         font-weight: 600;
         cursor: pointer;
         padding: 0;
@@ -371,14 +371,17 @@
 
                     <p class="short-desc">
                         {{ $product['desc'] }}
-                        <button class="read-more-btn" onclick="toggleDesc(this)">
+                        <button class="read-more-btn read-more" onclick="toggleDesc(this)">
                             Read More
                         </button>
                     </p>
 
-                    <p class="long-desc">
-                        {!! nl2br($product['long_desc']) !!}
-                    </p>
+                    <div class="long-desc">
+                        <p>{!! nl2br($product['long_desc']) !!}</p>
+                        <button class="read-more-btn read-less" onclick="toggleDesc(this)">
+                            Read Less
+                        </button>
+                    </div>
                 </div>
 
                 <div class="detail-price">
@@ -432,17 +435,18 @@
 
 @push('scripts')
     <script>
-        function toggleDesc(btn) {
-            const wrapper = btn.closest('.detail-desc');
-            const longDesc = wrapper.querySelector('.long-desc');
+    function toggleDesc(btn) {
+        const wrapper = btn.closest('.detail-desc');
+        const longDesc = wrapper.querySelector('.long-desc');
+        const readMoreBtn = wrapper.querySelector('.read-more');
 
-            if (longDesc.style.display === 'block') {
-                longDesc.style.display = 'none';
-                btn.innerText = 'Read More';
-            } else {
-                longDesc.style.display = 'block';
-                btn.innerText = 'Read Less';
-            }
+        if (longDesc.style.display === 'block') {
+            longDesc.style.display = 'none';
+            readMoreBtn.style.display = 'inline';
+        } else {
+            longDesc.style.display = 'block';
+            readMoreBtn.style.display = 'none';
         }
-    </script>
+    }
+</script>
 @endpush
