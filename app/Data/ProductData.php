@@ -57,7 +57,7 @@ return [
         'name' => 'Heliconia Indoor',
         'price' => 'Rp 200.000',
         'old_price' => 'Rp 400.000',
-        'desc' => 'A tropical plant with bold leaves that creates a vibrant atmosphere.',
+        'desc' => 'A tropical plant with bold leaves that creates vibrant atmosphere.',
         'long_desc' => 'Heliconia Indoor is a tropical plant known for its large and striking foliage. It prefers bright indirect light and regular watering. Suitable for spacious indoor areas or shaded outdoor environments.'
     ],
     8 => [

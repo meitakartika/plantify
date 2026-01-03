@@ -57,14 +57,48 @@
         gap: 36px;
     }
 
-    .nav-icons a {
+    .person-icon {
         color: #1D2F33;
-        font-size: 22px;
+        font-size: 24px;
         transition: color 0.2s ease;
+        margin-top: 4px;
     }
 
-    .nav-icons a:hover {
+    .person-icon:hover {
         color: #258075;
+    }
+
+    .cart-icon {
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+        font-size: 22px;
+        color: #1D2F33;
+        text-decoration: none;
+    }
+
+    .cart-icon:hover {
+        color: #258075;
+    }
+
+    .cart-badge {
+        position: absolute;
+        top: -6px;
+        right: -10px;
+        min-width: 16px;
+        height: 16px;
+        padding: 0 5px;
+        background: #258075;
+        color: #fff;
+        font-size: 10px;
+        font-weight: 600;
+        border-radius: 999px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        line-height: 1;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+        pointer-events: none;
     }
 
     /* BURGER MENU */
@@ -130,8 +164,11 @@
             </nav>
 
             <div class="nav-icons">
-                <a href="/cart"><i class="bi bi-cart3"></i></a>
-                <a href="{{ route('login') }}"><i class="bi bi-person"></i></a>
+                <a href="{{ route('cart') }}" class="cart-icon" id="cartBtn">
+                    <i class="bi bi-cart3"></i>
+                    <span class="cart-badge" id="cartBadge">0</span>
+                </a>
+                <a href="{{ route('login') }}" class="person-icon"><i class="bi bi-person"></i></a>
             </div>
         </div>
     </header>

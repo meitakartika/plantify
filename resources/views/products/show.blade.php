@@ -393,8 +393,18 @@
                 </div>
 
                 <div class="detail-actions">
-                    <a href="/checkout" class="btn-primary">Buy Now</a>
-                    <a href="/cart" class="btn-outline">Add to Cart</a>
+                    <a href="#" class="btn-primary buy-now" data-id="{{ $id }}"
+                        data-name="{{ $product['name'] }}"
+                        data-price="{{ (int) preg_replace('/\D/', '', $product['price']) }}"
+                        data-image="{{ $product['img'] }}">
+                        Buy Now
+                    </a>
+                    <a href="#" class="btn-outline add-to-cart" data-id="{{ $id }}"
+                        data-name="{{ $product['name'] }}"
+                        data-price="{{ (int) preg_replace('/\D/', '', $product['price']) }}"
+                        data-image="{{ $product['img'] }}">
+                        Add to Cart
+                    </a>
                 </div>
             </div>
         </div>
@@ -435,18 +445,70 @@
 
 @push('scripts')
     <script>
-    function toggleDesc(btn) {
-        const wrapper = btn.closest('.detail-desc');
-        const longDesc = wrapper.querySelector('.long-desc');
-        const readMoreBtn = wrapper.querySelector('.read-more');
+        function toggleDesc(btn) {
+            const wrapper = btn.closest('.detail-desc');
+            const longDesc = wrapper.querySelector('.long-desc');
+            const readMoreBtn = wrapper.querySelector('.read-more');
 
-        if (longDesc.style.display === 'block') {
-            longDesc.style.display = 'none';
-            readMoreBtn.style.display = 'inline';
-        } else {
-            longDesc.style.display = 'block';
-            readMoreBtn.style.display = 'none';
+            if (longDesc.style.display === 'block') {
+                longDesc.style.display = 'none';
+                readMoreBtn.style.display = 'inline';
+            } else {
+                longDesc.style.display = 'block';
+                readMoreBtn.style.display = 'none';
+            }
         }
-    }
-</script>
+
+        document.addEventListener('DOMContentLoaded', () => {
+            console.log('Product detail JS loaded');
+
+            document.querySelectorAll('.buy-now').forEach(btn => {
+                console.log('Found buy-now button', btn);
+                btn.addEventListener('click', e => {
+                    e.preventDefault();
+                    console.log('Buy Now clicked');
+                    const item = {
+                        id: btn.dataset.id,
+                        name: btn.dataset.name,
+                        price: Number(btn.dataset.price),
+                        image: btn.dataset.image,
+                        qty: 1
+                    };
+                    console.log('Item to save:', item);
+                    localStorage.setItem('checkout_items', JSON.stringify([item]));
+                    console.log('checkout_items now:', localStorage.getItem('checkout_items'));
+                    window.location.href = "{{ route('checkout') }}";
+                });
+            });
+        });
+
+        // Add to cart
+        document.querySelectorAll('.add-to-cart').forEach(btn => {
+            btn.addEventListener('click', e => {
+                e.preventDefault();
+
+                let cart = JSON.parse(localStorage.getItem('cart')) || [];
+                const id = btn.dataset.id.toString();
+                const price = Number(btn.dataset.price.toString().replace(/[^\d]/g, '')) || 0;
+                const found = cart.find(item => item.id == id);
+
+                if (found) {
+                    found.qty++;
+                } else {
+                    cart.push({
+                        id: id,
+                        name: btn.dataset.name.toString(),
+                        price: price,
+                        image: btn.dataset.image.toString(),
+                        qty: 1
+                    });
+                }
+
+                localStorage.setItem('cart', JSON.stringify(cart));
+                updateCartBadge();
+
+                alert('Added to cart!');
+            });
+        });
+    </script>
 @endpush

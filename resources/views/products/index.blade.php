@@ -409,41 +409,28 @@
             <h3>Deals of the Day</h3>
 
             <div class="deals-viewport">
-                <div class="deals-track" id="dealsTrack">
-                    <div class="deal-card">
-                        <img src="/images/plantdeals1.png" alt="">
-                        <div class="deal-info">
-                            <span class="category">Indoor Plant</span>
-                            <h4>Haworthia Attenuata</h4>
-                            <p class="price">Rp 200.000 <del>Rp 400.000</del></p>
-                            <p class="deal-desc">Plants that give an elegant impression to indoor spaces.</p>
-                            <a href="#">Shop Now →</a>
-                        </div>
-                    </div>
-
-                    <div class="deal-card">
-                        <img src="/images/plantdeals2.png" alt="">
-                        <div class="deal-info">
-                            <span class="category">Outdoor Plant</span>
-                            <h4>Heliconia Indoor</h4>
-                            <p class="price">Rp 200.000 <del>Rp 400.000</del></p>
-                            <p class="deal-desc"> Strong and easy-to-care-for outdoor plant options.</p>
-                            <a href="#">Shop Now →</a>
-                        </div>
-                    </div>
-
-                    <div class="deal-card">
-                        <img src="/images/plantdeals3.png" alt="">
-                        <div class="deal-info">
-                            <span class="category">Office Desk Plant</span>
-                            <h4>Crassula Perforata</h4>
-                            <p class="price">Rp 200.000 <del>Rp 400.000</del></p>
-                            <p class="deal-desc"> A small plant that is suitable to be placed on a work desk.</p>
-                            <a href="#">Shop Now →</a>
-                        </div>
-                    </div>
+    <div class="deals-track" id="dealsTrack">
+        @foreach([3,7,9] as $productId) {{-- 3 produk deals --}}
+            @php
+                $product = $products[$productId];
+            @endphp
+            <div class="deal-card">
+                <img src="{{ $product['img'] }}" alt="{{ $product['name'] }}">
+                <div class="deal-info">
+                    <span class="category">{{ $product['category'] }}</span>
+                    <h4>{{ $product['name'] }}</h4>
+                    <p class="price">{{ $product['price'] }}
+                        @if(isset($product['old_price']))
+                            <del>{{ $product['old_price'] }}</del>
+                        @endif
+                    </p>
+                    <p class="deal-desc">{{ $product['desc'] }}</p>
+                    <a href="{{ route('products.show', $productId) }}">Shop Now →</a>
                 </div>
             </div>
+        @endforeach
+    </div>
+</div>
         </section>
 
         <!-- SEARCH -->
@@ -462,7 +449,7 @@
 
         <div class="product-grid">
             @foreach ($products as $index => $product)
-                <a href="/products/{{ $index }}" class="product-card">
+                <a href="{{ route('products.show', $index) }}" class="product-card">
                     <img src="{{ $product['img'] }}" alt="">
                     <span class="category">{{ $product['category'] }}</span>
                     <h4>{{ $product['name'] }}</h4>

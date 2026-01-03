@@ -166,7 +166,7 @@
 
                 <a href="#" class="forgot">Forget Password?</a>
 
-                <button type="submit" class="btn-login">
+                <button type="button" class="btn-login" onclick="window.location.href='{{ url('/404') }}'">
                     Log In <i class="bi bi-arrow-right"></i>
                 </button>
 

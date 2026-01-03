@@ -167,7 +167,7 @@
                     <input type="password" class="form-control" placeholder="Password">
                 </div>
 
-                <button type="submit" class="btn-register">
+                <button type="button" class="btn-register" onclick="window.location.href='{{ url('/404') }}'">
                     Sign Up <i class="bi bi-arrow-right"></i>
                 </button>
 
